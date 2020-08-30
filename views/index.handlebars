@@ -1,0 +1,71 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">幹話產生器</a>
+</nav>
+
+<div class="container mt-5" style="border: 1px solid #E0E3DA; border-radius: 10px;">
+  <div class="row m-4">
+    <h5><i class="fas fa-hand-point-down"></i> 請選擇下列一個對象來說幹話</h5>
+  </div>
+  <form method="POST" action="/">
+    <div class="row pl-4 pr-4">
+      <div class="col-md-4 card" style="border: none;">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
+          class="card-img-top" style="height: 37vh;" alt="...">
+        <div class="card-body mx-auto">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="target" id="engineer" value="engineer"
+              {{#checkRadio option "engineer"}}checked{{/checkRadio}}>
+            <label class="form-check-label" for="exampleRadios1">
+              工程師
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 card" style="border: none">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
+          class="card-img-top" style="height: 37vh;" alt="...">
+
+        <div class="card-body mx-auto">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="target" id="designer" value="designer"
+              {{#checkRadio option "designer"}}checked{{/checkRadio}}>
+            <label class="form-check-label" for="exampleRadios1">
+              設計師
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 card" style="border: none">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+          class="card-img-top" style="height: 37vh" alt="...">
+        <div class="card-body mx-auto">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="target" id="entrepreneur" value="entrepreneur"
+              {{#checkRadio option "entrepreneur"}}checked{{/checkRadio}}>
+            <label class="form-check-label" for="exampleRadios1">
+              創業家
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4 justify-content-center">
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary">產生幹話</button>
+        </div>
+
+        <div class="col-md-8 alert alert-dark" style="height: 15vh; width:80vw;">
+          {{#if dialogue }}
+          <div>
+            <p class="card-text">{{dialogue}}</p>
+          </div>
+          {{/if}}
+        </div>
+
+      </div>
+
+    </div>
+  </form>
+</div>
